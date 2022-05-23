@@ -1,6 +1,5 @@
 package com.example.todolist.model;
 
-import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@Entity
+@Entity // db table 지정명령 어노테이션
 @NoArgsConstructor
 @AllArgsConstructor
 public class TodoEntity {
@@ -19,8 +18,8 @@ public class TodoEntity {
     @Column(nullable = false)
     private String title;
 
-    @Column(name = "todoOrder", nullable = false)
-    private Long order;
+    @Column(name = "todoRank", nullable = false)
+    private Long rank;
 
     @Column(nullable = false)
     private Boolean completed;

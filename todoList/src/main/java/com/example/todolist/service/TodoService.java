@@ -25,7 +25,7 @@ public class TodoService {
     public TodoEntity add(TodoRequest request) {
         TodoEntity todoEntity = new TodoEntity();
         todoEntity.setTitle(request.getTitle());
-        todoEntity.setOrder(request.getOrder());
+        todoEntity.setRank(request.getRank());
         todoEntity.setCompleted(request.getCompleted());
 
         return this.todoRepository.save(todoEntity);
@@ -62,8 +62,8 @@ public class TodoService {
             todoEntity.setTitle(request.getTitle());
         }
 
-        if (request.getOrder() != null) {
-            todoEntity.setOrder(request.getOrder());
+        if (request.getRank() != null) {
+            todoEntity.setRank(request.getRank());
         }
 
         if (request.getCompleted() != null) {

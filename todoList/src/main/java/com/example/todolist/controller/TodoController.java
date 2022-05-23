@@ -29,8 +29,8 @@ public class TodoController {
         if (ObjectUtils.isEmpty(request.getTitle()))
             return ResponseEntity.badRequest().build();
 
-        if (ObjectUtils.isEmpty(request.getOrder()))
-            request.setOrder(0L);
+        if (ObjectUtils.isEmpty(request.getRank()))
+            request.setRank(0L);
 
         if (ObjectUtils.isEmpty(request.getCompleted()))
             request.setCompleted(false);
